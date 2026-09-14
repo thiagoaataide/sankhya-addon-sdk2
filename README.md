@@ -2,7 +2,7 @@
 
 Habilidade de agent para **Cursor**, **Claude Code** e **Codex** implementar add-ons no **SDK Sankhya novo** (JAPE + Guice + Bean Validation + MapStruct).
 
-Este repositório **é a skill**. O catálogo [skillforge](https://github.com/thiagoaataide/-skillforge) inclui este repo como *git submodule*.
+Este repositório **é a skill**. O catálogo [skillforge](https://github.com/GRUPO-GET/skillforge) inclui este repo como *git submodule*.
 
 Baseada na documentação oficial:
 
@@ -30,7 +30,7 @@ install.sh                        # copia para o addon
 ## Instalação em um projeto de addon
 
 ```sh
-git clone git@github.com:thiagoaataide/sankhya-addon-sdk2.git
+git clone git@github.com:GRUPO-GET/sankhya-addon-sdk2.git
 cd sankhya-addon-sdk2
 ./install.sh /caminho/do/seu-addon
 ```
