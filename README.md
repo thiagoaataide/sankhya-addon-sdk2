@@ -48,7 +48,7 @@ No Cursor, se a skill aparecer duplicada, mantenha só `.cursor/skills/`.
 Pelo catálogo skillforge:
 
 ```sh
-git clone --recurse-submodules git@github.com:thiagoaataide/-skillforge.git
+git clone --recurse-submodules git@github.com:GRUPO-GET/skillforge.git
 cd -- -skillforge
 ./install.sh /caminho/do/seu-addon
 ```
