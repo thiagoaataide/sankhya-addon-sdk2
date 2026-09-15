@@ -179,6 +179,7 @@ public class InstanciaCustomizadaUsuarios {
 - `description` e `dataType` em toda `@Column` / `@JoinColumn` — o XML gerado depende disso.
 - Revise scripts AutoDDL antes de produção.
 - Views, menus, dashboards, filtros, tree tables: XML em `datadictionary/`, ISO-8859-1, metadados.xsd.
+- Entidade filha em **tela nativa** (`parentInstance`, aba no Om): Java + AutoDD; ver [native-child-tabs.md](native-child-tabs.md).
 
 ## Anti-pattern
 

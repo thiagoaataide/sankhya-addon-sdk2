@@ -1,6 +1,6 @@
 ---
 name: sankhya-addon-sdk
-description: Orienta o agent a implementar add-ons Sankhya com o SDK Addon Studio 2.0 (JapeEntity, JapeRepository, @Controller, Guice, Bean Validation, MapStruct, AutoDD). Use ao criar, revisar ou refatorar addon Sankhya; ao editar build.gradle do studio, entidades JAPE, repositórios, controllers, dicionário de dados; ou quando o usuário mencionar SDK Sankhya, Addon Studio, JapeRepository, AutoDD, @Transactional ou gradle-plugin.
+description: Orienta o agent a implementar add-ons Sankhya com o SDK Addon Studio 2.0 (JapeEntity, JapeRepository, @Controller, Guice, Bean Validation, MapStruct, AutoDD). Use ao criar, revisar ou refatorar addon Sankhya; ao editar build.gradle do studio, entidades JAPE, repositórios, controllers, dicionário de dados, sub-abas em telas nativas (parentInstance); ou quando o usuário mencionar SDK Sankhya, Addon Studio, JapeRepository, AutoDD, TGFTOP, tela nativa, @Transactional ou gradle-plugin.
 paths:
   - "**/*.java"
   - "**/build.gradle"
@@ -110,6 +110,7 @@ public class VeiculoController {
 | FK: quadro `@ManyToOne`/`@OneToOne` → `@JoinColumn(s)`; `@OneToMany` → `@Relationship`; PK composta | [references/foreign-keys.md](references/foreign-keys.md) |
 | SQL Oracle+MSSQL | [references/macros.md](references/macros.md) |
 | Filtro transversal antes do Finder | [references/before-load-listener.md](references/before-load-listener.md) |
+| Sub-aba filha em tela nativa (`parentInstance`, `TGFTOP`, AutoDD, aba no Om) | [references/native-child-tabs.md](references/native-child-tabs.md) |
 
 ## 5. Anti-patterns (proibido)
 
@@ -127,6 +128,8 @@ public class VeiculoController {
 | Concatenar SQL (`"PLACA = '" + placa + "'"`) | `:parametro` nomeado |
 | `@Delete` | `@Modifying` + `@NativeQuery` |
 | Plugin Studio `1.x` ou `< 2.0.18` | `gradle-plugin` ≥ 2.0.18 |
+| `@Expression` no vínculo pai/filho nativo | `@Relationship` + `@JoinColumns` — [native-child-tabs.md](references/native-child-tabs.md) |
+| Menu/tela própria só para entidade filha de nativa | Aba na tela nativa + metadata gerado |
 
 ## 6. Skills irmãs
 
