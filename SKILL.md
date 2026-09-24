@@ -131,9 +131,33 @@ public class VeiculoController {
 | `@Expression` no vínculo pai/filho nativo | `@Relationship` + `@JoinColumns` — [native-child-tabs.md](references/native-child-tabs.md) |
 | Menu/tela própria só para entidade filha de nativa | Aba na tela nativa + metadata gerado |
 
-## 6. Skills irmãs
+## 6. Router + skills Studio (opção B)
 
-Se o repositório já tiver o plugin [snk-devcenter/addon-studio](https://github.com/snk-devcenter/addon-studio) (`entity`, `data-dictionary`, `database`, `controller`, …), use-as para artefatos especializados (dbscript dual, XML de tela, encoding). Esta skill manda no **framework novo** e na versão do Studio. Não contradiga o padrão já existente no projeto.
+Este repo inclui **25 skills** em `skills/studio/` e **6 agents** em `agents/addon-studio/` (cópia [snk-devcenter/addon-studio](https://github.com/snk-devcenter/addon-studio)). Instale tudo com `./install.sh`.
+
+**Fluxo:** use **esta skill** (`sankhya-addon-sdk`) como entrada e `references/` para regras GET. Para um artefato concreto, invoque a skill Studio pelo nome da pasta. Onde há sobreposição, a skill Studio manda ler a reference abaixo — não contradiga.
+
+| Invocar (Cursor/Claude `/…`, Codex `$…`) | Reference GET (se houver) | Foco Studio |
+| --- | --- | --- |
+| `entity` | [orm.md](references/orm.md) | `@JapeEntity`, PK, relacionamentos |
+| `controller` | [controller.md](references/controller.md) | Orquestração, exemplos Studio |
+| `repository` | [repository.md](references/repository.md) | `JapeRepository`, queries |
+| `mapstruct` | [mapstruct.md](references/mapstruct.md) | Mappers CDI |
+| `dependency-injection` | [dependency-injection.md](references/dependency-injection.md) | Guice, `@Component` |
+| `value` | [value.md](references/value.md) | `@Value`, config |
+| `type-adapter` | [type-adapters.md](references/type-adapters.md) | Adaptadores nativos |
+| `controller-advice` | [controller-advice.md](references/controller-advice.md) | Erros globais |
+| `macros` | [macros.md](references/macros.md) | SQL dual Oracle/MSSQL |
+| `before-load-listener` | [before-load-listener.md](references/before-load-listener.md) | Filtro Finder |
+| `data-dictionary` | [native-child-tabs.md](references/native-child-tabs.md) quando sub-aba nativa | XML dicionário, telas |
+| `database` | — | Dbscripts versionados |
+| `build` | [version-build.md](references/version-build.md) | Gradle plugin |
+| `encoding`, `init`, `test`, `job`, `listener`, `callback`, `business-rule`, `action-button` | — | Artefato homônimo |
+| `retrofit`, `sankhya-utils`, `sankhya-js`, `jsp` | — | Integração / UI Om |
+
+**Agents** (`.cursor/agents/`, `.claude/agents/`, `.codex/agents/`): `entity-architect`, `dbscript-builder`, `controller-designer`, `test-writer`, `addon-reviewer`, `troubleshooter`.
+
+Detalhes: [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## 7. Documentação oficial
 
